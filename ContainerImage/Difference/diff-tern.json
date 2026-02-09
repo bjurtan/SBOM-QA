@@ -4,7 +4,7 @@
     "version": "0.5.6"
   },
   "file_1": "SBOM-QA/ContainerImage/pangenome_pggb_4e1835.json",
-  "file_2": "Downloads/container/tern.json",
+  "file_2": "Downloads/container/tern.spdx.json",
   "differences": [
     {
       "package": "actions/checkout",

@@ -1,4 +1,4 @@
-Validating normal.syft.json
+Validating normal.syft.spdx.json
 +----+--------------+--------------+------------------------+---------------------------+
 | #  | Error type   | SPDX ID      | Package name           | Reason                    |
 +----+--------------+--------------+------------------------+---------------------------+
@@ -378,4 +378,4 @@ Validating normal.syft.json
 |    | field from   |              |                        |                           |
 |    | CreationInfo |              |                        |                           |
 +----+--------------+--------------+------------------------+---------------------------+
-The SPDX file final.projects/java.maven/normal.syft.json is not compliant with the OpenChain Telco SBOM Guide version 1.1
+The SPDX file final.projects/java.maven/normal.syft.spdx.json is not compliant with the OpenChain Telco SBOM Guide version 1.1

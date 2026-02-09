@@ -1,4 +1,4 @@
-Validating tern-docer.json
+Validating tern-docker.spdx.json
 +----+--------------+--------------+---------------------------+---------------------------+
 | #  | Error type   | SPDX ID      | Package name              | Reason                    |
 +----+--------------+--------------+---------------------------+---------------------------+
@@ -290,4 +290,4 @@ Validating tern-docer.json
 |    | ationInfo::C |              |                           |                           |
 |    | reator       |              |                           |                           |
 +----+--------------+--------------+---------------------------+---------------------------+
-The SPDX file Downloads/container/tern-docer.json is not compliant with the OpenChain Telco SBOM Guide version 1.1
+The SPDX file Downloads/container/tern-docker.spdx.json is not compliant with the OpenChain Telco SBOM Guide version 1.1

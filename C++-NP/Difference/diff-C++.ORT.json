@@ -4,7 +4,7 @@
     "version": "0.5.6"
   },
   "file_1": "SBOM-QA/C++-np/zeux_meshoptimizer_4b6446.json",
-  "file_2": "clone/C++-NP/ortC++MeShop.json",
+  "file_2": "clone/C++-NP/ortC++MeShop.spdx.json",
   "differences": [
     {
       "package": "actions/checkout",

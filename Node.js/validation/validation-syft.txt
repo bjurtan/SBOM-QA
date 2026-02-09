@@ -1,4 +1,4 @@
-Validating syft-default.json
+Validating syft-default.spdx.json
 +---+--------------+--------------+--------------+---------------------------+
 | # | Error type   | SPDX ID      | Package name | Reason                    |
 +---+--------------+--------------+--------------+---------------------------+
@@ -15,4 +15,4 @@ Validating syft-default.json
 |   | field from   |              |              |                           |
 |   | CreationInfo |              |              |                           |
 +---+--------------+--------------+--------------+---------------------------+
-The SPDX file clone/Node.js/mehdi-new/syft-default.json is not compliant with the OpenChain Telco SBOM Guide version 1.1
+The SPDX file clone/Node.js/mehdi-new/syft-default.spdx.json is not compliant with the OpenChain Telco SBOM Guide version 1.1

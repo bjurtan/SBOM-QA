@@ -1,4 +1,4 @@
-Validating trivy-default.json
+Validating trivy-default.spdx.json
 +----+--------------+--------------+---------------------------+---------------------------+
 | #  | Error type   | SPDX ID      | Package name              | Reason                    |
 +----+--------------+--------------+---------------------------+---------------------------+
@@ -424,4 +424,4 @@ Validating trivy-default.json
 |    | field from   |              |                           |                           |
 |    | CreationInfo |              |                           |                           |
 +----+--------------+--------------+---------------------------+---------------------------+
-The SPDX file Downloads/javamaven/trivy-default.json is not compliant with the OpenChain Telco SBOM Guide version 1.1
+The SPDX file Downloads/javamaven/trivy-default.spdx.json is not compliant with the OpenChain Telco SBOM Guide version 1.1

@@ -4,7 +4,7 @@
     "version": "0.5.6"
   },
   "file_1": "SBOM-QA/java_maven/bytedeco_javacv_79ca6b.json",
-  "file_2": "Downloads/javamaven/scanoss-build.json",
+  "file_2": "Downloads/javamaven/scanoss-build.spdx.json",
   "differences": [
     {
       "package": "org.bytedeco:javacv-platform",

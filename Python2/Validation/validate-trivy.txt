@@ -1,4 +1,4 @@
-Validating trivy.json
+Validating trivy.spdx.json
 +-----+--------------+--------------+---------------------------+---------------------------+
 | #   | Error type   | SPDX ID      | Package name              | Reason                    |
 +-----+--------------+--------------+---------------------------+---------------------------+
@@ -958,4 +958,4 @@ Validating trivy.json
 |     | field from   |              |                           |                           |
 |     | CreationInfo |              |                           |                           |
 +-----+--------------+--------------+---------------------------+---------------------------+
-The SPDX file final.projects/python/trivy.json is not compliant with the OpenChain Telco SBOM Guide version 1.1
+The SPDX file final.projects/python/trivy.spdx.json is not compliant with the OpenChain Telco SBOM Guide version 1.1
