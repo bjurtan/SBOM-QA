@@ -4,7 +4,7 @@
     "version": "0.5.6"
   },
   "file_1": "SBOM-QA/Go/gohugoio_hugo_b0888a.json",
-  "file_2": "clone/Go/mehdi-new/ort.json",
+  "file_2": "clone/Go/mehdi-new/ort.spdx.json",
   "differences": [
     {
       "package": "@tailwindcss/typography",

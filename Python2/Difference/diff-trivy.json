@@ -4,7 +4,7 @@
     "version": "0.5.6"
   },
   "file_1": "SBOM-QA/python-gpteng/AntonOsika_gpt-engineer_448e9b.json",
-  "file_2": "final.projects/python/trivy.json",
+  "file_2": "final.projects/python/trivy.spdx.json",
   "differences": [
     {
       "package": "keyboard",

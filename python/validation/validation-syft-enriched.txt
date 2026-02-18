@@ -1,4 +1,4 @@
-Validating syft.pdm.python.json
+Validating syft.pdm.python.spdx.json
 +----+--------------+--------------+---------------------------+---------------------------+
 | #  | Error type   | SPDX ID      | Package name              | Reason                    |
 +----+--------------+--------------+---------------------------+---------------------------+
@@ -492,4 +492,4 @@ Validating syft.pdm.python.json
 |    | field from   |              |                           |                           |
 |    | CreationInfo |              |                           |                           |
 +----+--------------+--------------+---------------------------+---------------------------+
-The SPDX file clone/python/newtag/syft.pdm.python.json is not compliant with the OpenChain Telco SBOM Guide version 1.1
+The SPDX file clone/python/newtag/syft.pdm.python.spdx.json is not compliant with the OpenChain Telco SBOM Guide version 1.1

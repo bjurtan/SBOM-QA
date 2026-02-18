@@ -1,4 +1,4 @@
-Validating syft.json
+Validating syft.spdx.json
 +---+--------------+--------------+--------------+---------------------------+
 | # | Error type   | SPDX ID      | Package name | Reason                    |
 +---+--------------+--------------+--------------+---------------------------+
@@ -15,4 +15,4 @@ Validating syft.json
 |   | field from   |              |              |                           |
 |   | CreationInfo |              |              |                           |
 +---+--------------+--------------+--------------+---------------------------+
-The SPDX file clone/C++-NP/syft.json is not compliant with the OpenChain Telco SBOM Guide version 1.1
+The SPDX file clone/C++-NP/syft.spdx.json is not compliant with the OpenChain Telco SBOM Guide version 1.1

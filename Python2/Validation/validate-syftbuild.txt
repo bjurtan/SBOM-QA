@@ -1,4 +1,4 @@
-Validating syft-build.json
+Validating syft-build.spdx.json
 +-----+--------------+--------------+---------------------------+---------------------------+
 | #   | Error type   | SPDX ID      | Package name              | Reason                    |
 +-----+--------------+--------------+---------------------------+---------------------------+
@@ -1527,4 +1527,4 @@ Validating syft-build.json
 |     | field from   |              |                           |                           |
 |     | CreationInfo |              |                           |                           |
 +-----+--------------+--------------+---------------------------+---------------------------+
-The SPDX file final.projects/python/syft-build.json is not compliant with the OpenChain Telco SBOM Guide version 1.1
+The SPDX file final.projects/python/syft-build.spdx.json is not compliant with the OpenChain Telco SBOM Guide version 1.1

@@ -2,18 +2,18 @@
 
 ## 1. Scope
 
-The scope of this project is to evaluate and benchmark open source Software Composition Analyzis (SCA) or SBOM generation tools in a structured and standardized manner.  
+The scope of this project is to evaluate and benchmark open source Software Composition Analyzis (SCA) or SBOM generation tools in a structured and standardized manner.
 
-Specifically, the project covers:  
+Specifically, the project covers:
 
-- Open source software repositories as test targets, spanning multiple programming languages and ecosystems.  
-- Generation and analysis of SBOMs in the [SPDX](https://spdx.dev/) format.  
-- Use of reference SBOMs exported from original repository dependency graphs to serve as a consistent baseline.  
-- Alignment with the [OpenChain Telco SBOM Guide](https://github.com/OpenChain-Project/Telco-WG/blob/main/OpenChain-Telco-SBOM-Guide_1.0_EN.md) to ensure standardized practices for SBOM structure, content, and validation.  
-- Evaluation of tool performance, accuracy, and coverage to deliver reliable and actionable benchmarking results.  
+- Open source software repositories as test targets, spanning multiple programming languages and ecosystems.
+- Generation and analysis of SBOMs in the [SPDX](https://spdx.dev/) format.
+- Use of reference SBOMs exported from original repository dependency graphs to serve as a consistent baseline.
+- Alignment with the [OpenChain Telco SBOM Guide](https://github.com/OpenChain-Project/Telco-WG/blob/main/OpenChain-Telco-SBOM-Guide_1.0_EN.md) to ensure standardized practices for SBOM structure, content, and validation.
+- Evaluation of tool performance, accuracy, and coverage to deliver reliable and actionable benchmarking results.
 
-This project is licensed under the [BSD 3-Clause License](https://github.com/nokia/SBOM-QA/blob/main/LICENSE).  
- 
+This project is licensed under the [BSD 3-Clause License](https://github.com/nokia/SBOM-QA/blob/main/LICENSE).
+
 
 ## 2. Terms and Definitions
 
@@ -29,11 +29,11 @@ SBOMs can exist at different stages of the software lifecycle, including *Design
 
 Data Format refers to the structure in which SBOM information is represented. Common formats include [SPDX](https://spdx.dev/), [CycloneDX](https://cyclonedx.org/), or other proprietary formats. For the purposes of this project, the SBOMs are represented using the **SPDX** format.
 
-### Package 
+### Package
 
 A package is a reusable software unit, such as a library or module, distributed via package managers and accompanied by metadata including version, license, and authorship.
 
-### Package Manager 
+### Package Manager
 
 A package manager is a tool that automates the installation, upgrade, configuration, and removal of software packages, resolving both direct and transitive dependencies. Examples include *npm, pip, Maven, Gradle,* and *Conan*.
 
@@ -52,17 +52,17 @@ A transitive dependency is an indirect package required by a direct dependency o
 
 ## 3. Methodology
 
-### 3.1. Tools Selection Criteria 
+### 3.1. Tools Selection Criteria
 
-- **Open Source and Actively Maintained:** Only open source tools with active development communities and regular updates were considered to ensure relevance, reliability, and transparency. 
+- **Open Source and Actively Maintained:** Only open source tools with active development communities and regular updates were considered to ensure relevance, reliability, and transparency.
 
-- **Support for SPDX JSON Output:** Since SPDX JSON was the standardized SBOM format selected for comparison, all selected tools needed to either natively support or allow conversion to this format. 
+- **Support for SPDX JSON Output:** Since SPDX JSON was the standardized SBOM format selected for comparison, all selected tools needed to either natively support or allow conversion to this format.
 
-- **Language and Ecosystem Compatibility:** Tools were required to support multiple programming languages and environments, particularly those used in our test targets (e.g., C, C++, Java, Python, Node.js, Go, container images). 
+- **Language and Ecosystem Compatibility:** Tools were required to support multiple programming languages and environments, particularly those used in our test targets (e.g., C, C++, Java, Python, Node.js, Go, container images).
 
-- **Alignment with OpenChain Telco SBOM Guide:** Where applicable, tools were evaluated for their ability to generate SBOMs conforming to the recommendations and structure outlined in the OpenChain Telco SBOM Guide. 
+- **Alignment with OpenChain Telco SBOM Guide:** Where applicable, tools were evaluated for their ability to generate SBOMs conforming to the recommendations and structure outlined in the OpenChain Telco SBOM Guide.
 
-- **Richness of Metadata:** Tools were assessed on the granularity and completeness of SBOM content, including license information, versioning, source origin, cryptographic hashes, and component relationships. 
+- **Richness of Metadata:** Tools were assessed on the granularity and completeness of SBOM content, including license information, versioning, source origin, cryptographic hashes, and component relationships.
 
 
 ### 3.2. Tools
@@ -73,30 +73,30 @@ This section lists the SBOM generation tools evaluated in this project, categori
 
 #### 1. [Syft](https://github.com/anchore/syft) | [Docs](https://anchore.com/opensource/syft/) | [v1.26.1](https://github.com/anchore/syft/releases/tag/v1.26.1)
 
-A CLI tool and Go library for generating an SBOM from container images and filesystems.  
+A CLI tool and Go library for generating an SBOM from container images and filesystems.
 Exceptional for SBOM creation and integrates well with vulnerability scanners like [Grype](https://github.com/anchore/grype).
 
-> **Note:**   
+> **Note:**
 > **[ammend/syft](https://github.com/ammend/syft)** – A fork of Syft designed to generate SPDX JSON compliant with the [OpenChain Telco SBOM Guide](https://github.com/OpenChain-Project/Telco-WG/blob/main/OpenChain-Telco-SBOM-Guide_1.0_EN.md). Recommended for telecom sector requirements.
 
 
 #### 2. [Trivy](https://github.com/aquasecurity/trivy) | [Docs](https://aquasecurity.github.io/trivy/) | [v0.63.0](https://github.com/aquasecurity/trivy/releases/tag/v0.63.0)
 
-A comprehensive security tool for SBOM generation, vulnerability detection, license analysis, misconfiguration scanning, and secret discovery across container images, filesystems, repositories, VMs, and Kubernetes environments.  
+A comprehensive security tool for SBOM generation, vulnerability detection, license analysis, misconfiguration scanning, and secret discovery across container images, filesystems, repositories, VMs, and Kubernetes environments.
 
 #### 3. [OSS Review Toolkit (ORT)](https://github.com/oss-review-toolkit/ort) | [Docs](https://oss-review-toolkit.org/) | [62.2.0](https://github.com/oss-review-toolkit/ort/releases/tag/62.2.0)
 
-A policy automation and orchestration toolkit for SBOM generation, license compliance, vulnerability detection, and open source risk management. ORT supports CycloneDX, SPDX, and custom attribution documents, while enabling policy-as-code checks, dependency analysis, and automated reporting across software projects.  
+A policy automation and orchestration toolkit for SBOM generation, license compliance, vulnerability detection, and open source risk management. ORT supports CycloneDX, SPDX, and custom attribution documents, while enabling policy-as-code checks, dependency analysis, and automated reporting across software projects.
 
 #### 4. [SCANOSS](https://github.com/scanoss/scanoss.py) | [Docs](https://scanoss.readthedocs.io/en/latest/) | [v1.26.2](https://github.com/scanoss/scanoss.py/releases/tag/v1.26.2)
 
-The SCANOSS Python package provides a simple library for interacting with the SCANOSS APIs and engine, enabling SBOM generation, license compliance, and open source component identification.  
+The SCANOSS Python package provides a simple library for interacting with the SCANOSS APIs and engine, enabling SBOM generation, license compliance, and open source component identification.
 
 **Tools analyzing containers:**
 
 #### 1. [Syft](https://github.com/anchore/syft) | [Docs](https://anchore.com/opensource/syft/) | [v1.30.0](https://github.com/anchore/syft/releases/tag/v1.30.0)
 
-A CLI tool and Go library for generating SBOMs from **container images**.  
+A CLI tool and Go library for generating SBOMs from **container images**.
 It identifies installed packages and their metadata across multiple ecosystems, supporting images from registries, local Docker/OCI images, and tar archives.
 
 #### 2. [Tern](https://github.com/tern-tools/tern) | [v2.12.1](https://github.com/tern-tools/tern/releases/tag/v2.12.1)
@@ -116,25 +116,25 @@ Generates an SBOM for either an installed application or a complete system insta
 
 ## 3.4. Test Targets
 
-The test targets linked in this part are the original, publicly available repositories of the respective projects. 
+The test targets linked in this part are the original, publicly available repositories of the respective projects.
 
-### 1. [C (No package manager)](https://github.com/besser82/libxcrypt)  
+### 1. [C (No package manager)](https://github.com/besser82/libxcrypt)
 
 [libxcrypt](https://github.com/besser82/libxcrypt) | [tag-v4.4.38](https://github.com/besser82/libxcrypt/releases/tag/v4.4.38) is a modern C library for one-way hashing of passwords, supporting various algorithms like ***bcrypt, md5crypt,*** and ***yescrypt***. It provides traditional Unix `crypt` interfaces and extended functions for secure password handling. The project does not utilize a package manager, making it suitable for manual integration and analysis.
 
-### 2. [C++ (No package manager)](https://github.com/zeux/meshoptimizer)  
+### 2. [C++ (No package manager)](https://github.com/zeux/meshoptimizer)
 
 [MeshOptimizer](https://github.com/zeux/meshoptimizer) | [tag-v0.24](https://github.com/zeux/meshoptimizer/releases/tag/v0.24) is an open source C++ library developed by Arseny Kapoulkine, providing algorithms to optimize meshes for modern GPU vertex and index processing pipelines. It can reindex an existing index buffer or generate an entirely new set of indices from an unindexed vertex buffer. The project does not utilize a package manager, making it suitable for manual integration and analysis.
 
-### 3. [C++ (Conan)](https://github.com/catchorg/Catch2)  
+### 3. [C++ (Conan)](https://github.com/catchorg/Catch2)
 
 [Catch2](https://github.com/catchorg/Catch2) | [tag-v3.9.0](https://github.com/catchorg/Catch2/releases/tag/v3.9.0) is a modern, header-only testing framework for C++. It provides robust unit testing, micro-benchmarking, and test case management. For this study, the project is managed using the [Conan](https://conan.io/) package manager.
 
-### 4. [Go](https://github.com/gohugoio/hugo)  
+### 4. [Go](https://github.com/gohugoio/hugo)
 
 [Hugo](https://github.com/gohugoio/hugo) | [tag-v0.147.4](https://github.com/gohugoio/hugo/releases/tag/v0.147.4) is a fast and flexible static site generator written in Go. It is widely used for websites, blogs, documentation, and portfolios.
 
-### 5. [Node.js](https://github.com/expressjs/express)  
+### 5. [Node.js](https://github.com/expressjs/express)
 
 [Express](https://github.com/expressjs/express) | [tag-v5.1.0](https://github.com/expressjs/express/releases/tag/v5.1.0) is a minimal and flexible Node.js web application framework that provides robust features for building web and mobile applications.
 
@@ -144,13 +144,13 @@ The test targets linked in this part are the original, publicly available reposi
 
 - [GPT Engineer](https://github.com/AntonOsika/gpt-engineer) | [tag-v0.3.1](https://github.com/AntonOsika/gpt-engineer/releases/tag/v0.3.1) is a Python project designed to facilitate building AI-driven solutions and applications, providing a structured environment for rapid prototyping and experimentation.
 
-### 7. [Java (Maven-managed)](https://github.com/bytedeco/javacv)  
+### 7. [Java (Maven-managed)](https://github.com/bytedeco/javacv)
 
 [JavaCV](https://github.com/bytedeco/javacv) | [tag-1.5.12](https://github.com/bytedeco/javacv/releases/tag/1.5.12) is a Java interface to OpenCV, FFmpeg, and other computer vision and machine learning libraries. It provides a comprehensive set of tools for image and video processing, machine learning, and computer vision tasks. The project is managed using the [Maven](https://maven.apache.org/) package manager.
 
-### 8. [ContainerImage](https://github.com/pangenome/pggb)  
+### 8. [ContainerImage](https://github.com/pangenome/pggb)
 
-[pggb](https://github.com/pangenome/pggb) | [tag-v0.7.4](https://github.com/pangenome/pggb/releases/tag/v0.7.4) builds pangenome variation graphs from input sequences using ***wfmash, seqwish, smoothxg, gfaffix,*** and ***odgi***.  
+[pggb](https://github.com/pangenome/pggb) | [tag-v0.7.4](https://github.com/pangenome/pggb/releases/tag/v0.7.4) builds pangenome variation graphs from input sequences using ***wfmash, seqwish, smoothxg, gfaffix,*** and ***odgi***.
 
 >***Note:*** The project provides a ***Dockerfile*** for containerized usage, enabling local builds or pulls from the GitHub Container Registry.
 
@@ -165,9 +165,9 @@ For each test target, the Reference SBOM was exported from its **GitHub reposito
 We are aware that these Reference SBOMs are not complete or perfect, but these SBOMs are generated with a consitent toolchain and
 in a consistent environment.
 
-## 3.6. Comparison and Analysis 
+## 3.6. Comparison and Analysis
 
-The generated SBOMs from each tool were benchmarked against the corresponding reference SBOMs. 
+The generated SBOMs from each tool were benchmarked against the corresponding reference SBOMs.
 
 The comparison focused on the following criteria:
 
@@ -175,13 +175,13 @@ The comparison focused on the following criteria:
 - **Accuracy of versioning**
 - **Presence of critical metadata** (e.g., license)
 
-## 3.7. Validation 
+## 3.7. Validation
 
-[OpenChain Telco SBOM Validator](https://pypi.org/project/openchain-telco-sbom-validator/0.3.0/) was used to validate the structural compliance and metadata quality of each generated SBOM. 
+[OpenChain Telco SBOM Validator](https://pypi.org/project/openchain-telco-sbom-validator/0.3.0/) was used to validate the structural compliance and metadata quality of each generated SBOM.
 Validation criteria included:
 
-- **Conformance to SPDX specification** 
-- **Inclusion of mandatory and recommended fields** 
+- **Conformance to SPDX specification**
+- **Inclusion of mandatory and recommended fields**
 - **Logical consistency** (e.g., relationships, identifiers)
 
 ---
@@ -192,18 +192,18 @@ Validation criteria included:
 
 #### 4.1.1 [Syft](https://github.com/anchore/syft)
 
-**Command:**  
+**Command:**
 For generating SBOMs for all test targets this command is used:
 ```
-syft -o spdx-json=syft-sbom.json --enrich all --verbose .
+syft -o spdx-json=syft-sbom.spdx.json --enrich all --verbose .
 ```
 
 ##### 4.1.1.1 Ecosystem: [Node.js](https://github.com/nokia/SBOM-QA/tree/main/Node.js)
 
 - **Default SBOM:**
-[syft-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/syft-default.json)
+[syft-Nodejs.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/syft-default.spdx.json)
 
-Generated directly from the project source without performing any compilation step. 
+Generated directly from the project source without performing any compilation step.
 
 - **Compilation Step:**
 
@@ -215,17 +215,17 @@ npm install --package-lock
 - ***package-lock.json*** , ***node_modules***
 
 **Enriched SBOMs:**
-[syft-Nodejs-compilation.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/syft-lock.json)
+[syft-Nodejs-compilation.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/syft-lock.json)
 
 ##### 4.1.1.2 Ecosystem: [Go](https://github.com/gohugoio/hugo)
 
 - **Default SBOM:**
-[syft-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/syft.json)
+[syft-Go.spdx.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/syft.spdx.json)
 
 ##### 4.1.1.3 Ecosystem: [Python (FastAPI)](https://github.com/fastapi/fastapi)
 
-- **Default SBOM:** 
-[syft-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/syft.json)
+- **Default SBOM:**
+[syft-python.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/syft.spdx.json)
 
 - **Compilation Step:**
 
@@ -241,47 +241,47 @@ pdm install
 ```
 
 **Enriched SBOMs:**
-[syft-python-compilation.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/syft.pdm.python.json)
+[syft-python-compilation.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/syft.pdm.python.spdx.json)
 
 ##### 4.1.1.4 Ecosystem: [Python (GPT Engineer)](https://github.com/AntonOsika/gpt-engineer)
 
 - **Default SBOM:**
-[syft-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/syft.json)
+[syft-python2.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/syft.spdx.json)
 
 - **Compilation Step:**
 
-The project included both ***pyproject.toml*** and ***poetry.lock***. To install only the production dependencies (excluding development packages), the following command was executed: 
+The project included both ***pyproject.toml*** and ***poetry.lock***. To install only the production dependencies (excluding development packages), the following command was executed:
 
 ```
 poetry install --no-dev
 ```
 
 **Enriched SBOMs:**
-[syft-python2-compilation.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/syft-build.json)
+[syft-python2-compilation.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/syft-build.spdx.json)
 
 ##### 4.1.1.5 Ecosystem: [C++ (Conan)](https://github.com/catchorg/Catch2)
 
-- **Default SBOM:** 
-[syft-C++-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/syft.json)
+- **Default SBOM:**
+[syft-C++-CONAN.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/syft.spdx.json)
 
 ##### 4.1.1.6 Ecosystem: [C (No package manager)](https://github.com/besser82/libxcrypt)
 
-- **Default SBOM:** 
-[syft-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/syft.json)
+- **Default SBOM:**
+[syft-C.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/syft.spdx.json)
 
 ##### 4.1.1.7 Ecosystem: [C++ (No package manager)](https://github.com/zeux/meshoptimizer)
 
-- **Default SBOM:** 
-[syft-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/syft.json)
+- **Default SBOM:**
+[syft-C++.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/syft.spdx.json)
 
-##### 4.1.1.8 Ecosystem: [Java (Maven-managed)](https://github.com/bytedeco/javacv) 
+##### 4.1.1.8 Ecosystem: [Java (Maven-managed)](https://github.com/bytedeco/javacv)
 
 - **Default SBOM:**
-[syft-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/syft.json)
+[syft-Java.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/syft.spdx.json)
 
 - **Compilation Step:** Build
 
-The project was compiled to ensure that all direct and transitive dependencies were resolved and packaged into build artifacts ***(target/*.jar)***. following command was executed in tese target root: 
+The project was compiled to ensure that all direct and transitive dependencies were resolved and packaged into build artifacts ***(target/*.jar)***. following command was executed in tese target root:
 
 ```
 mvn clean package -DskipTests
@@ -295,73 +295,73 @@ mvn clean package -DskipTests
 Ensures a richer and more accurate SBOM including both direct and transitive dependencies.
 
 **Enriched SBOMs:**
-[syft-Java-compilation.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/syft-compilation.json)
+[syft-Java-compilation.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/syft-compilation.spdx.json)
 
-> **Note:**  
+> **Note:**
 > During the review of **[ammend/syft](https://github.com/ammend/syft)**, it was observed that this fork made no actual changes compared to the original **Syft** project. All steps, processes, and the generated SBOMs are completely identical to those produced by the original Syft.
 
-#### 4.1.2. [Scanoss](https://github.com/scanoss) 
+#### 4.1.2. [Scanoss](https://github.com/scanoss)
 
 Generating an SBOM using scanoss-py involves two steps:
 
 1. Scan the project and generate raw SBOM
-**Command:**  ( in test target root)
+**Command:**  (in test target root)
 ```
-scanoss-py scan -o scanoss-raw.json . 
+scanoss-py scan -o scanoss-raw.spdx.json .
 ```
 
-2. Convert raw SBOM to SPDX Lite format 
-**Command:**  ( in test target root)
+2. Convert raw SBOM to SPDX Lite format
+**Command:**  (in test target root)
 ```
-scanoss-py convert --input scanoss-raw.json --format spdxlite --output  scanoss.json 
+scanoss-py convert --input scanoss-raw.spdx.json --format spdxlite --output scanoss.spdx.json
 ```
 ##### 4.1.2.1 Ecosystem: [Node.js](https://github.com/nokia/SBOM-QA/tree/main/Node.js)
 
 - **Default SBOM:**
-[scanoss-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/scanoss.json)
+[scanoss-Nodejs.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/scanoss.spdx.json)
 
 - **Compilation Step:**
 
-The project did not originally include a ***package-lock.json*** file, To ensure accurate scanning and SBOM generation, the project dependencies were prepared as follows(in root of project): 
+The project did not originally include a ***package-lock.json*** file, To ensure accurate scanning and SBOM generation, the project dependencies were prepared as follows(in root of project):
 ```
 npm install --package-lock-only
 ```
-Creates the ***package-lock.json*** file.  (Does not install anything into node_modules) 
+Creates the ***package-lock.json*** file.  (Does not install anything into node_modules)
 
-To Install only production dependencies based on ***package-lock.json*** and Creates a clean environment containing runtime dependencies only, (reducing the risk of false positives from development or test packages during scanning), the following command was executed: 
+To Install only production dependencies based on ***package-lock.json*** and Creates a clean environment containing runtime dependencies only, (reducing the risk of false positives from development or test packages during scanning), the following command was executed:
 ```
 npm ci --only=production
 ```
 - **Enriched SBOMs:**
-[scanoss-compilation-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/scanoss-compilation.json)
+[scanoss-compilation-Nodejs.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/scanoss-compilation.spdx.json)
 
 ##### 4.1.2.2 Ecosystem: [Go](https://github.com/gohugoio/hugo)
 
 - **Default SBOM:**
-[scanoss-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/scanoss.json)
+[scanoss-Go.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/scanoss.spdx.json)
 
 - **Compilation Step:**
 
-To ensure all required dependencies are included and the module files are consistent, the following command was executed in the project root: 
+To ensure all required dependencies are included and the module files are consistent, the following command was executed in the project root:
 ```
 go mod tidy
 ```
-- Updated files: ***go.mod*** , ***go.sum*** 
+- Updated files: ***go.mod*** , ***go.sum***
 
-Additionally, to improve scanning accuracy, all required dependencies were copied into a local `vendor/` directory, exposing the actual source of dependencies to SCANOSS . The following command was executed: 
+Additionally, to improve scanning accuracy, all required dependencies were copied into a local `vendor/` directory, exposing the actual source of dependencies to SCANOSS . The following command was executed:
 ```
 go mod vendor
 ```
 - **Enriched SBOMs:**
-[scanoss-Go-compilation.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/scanoss-compilation.json)
+[scanoss-Go-compilation.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/scanoss-compilation.spdx.json)
 
 ##### 4.1.2.3 Ecosystem: [Python (FastAPI)](https://github.com/fastapi/fastapi)
 
 - **Default SBOM:**
-[scanoss-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/scanoss-default.json)
+[scanoss-python.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/scanoss-default.spdx.json)
 - **Compilation Step:**
 
-To ensure accurate SBOM generation with ScanOSS, all project dependencies were locked, installed, and vendored in the project root: 
+To ensure accurate SBOM generation with ScanOSS, all project dependencies were locked, installed, and vendored in the project root:
 - Lock dependencies:
 ```
 pdm lock
@@ -384,27 +384,27 @@ pip install --target=vendor -r requirements.txt
 ```
 
 - **Enriched SBOMs:**
-[scanoss-python-compilation.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/scanoss-vendor.json)
+[scanoss-python-compilation.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/scanoss-vendor.spdx.json)
 
 ###### 4.12.4 Ecosystem: [Python (GPT Engineer)](https://github.com/AntonOsika/gpt-engineer)
 
 - **Default SBOM:**
-[scanoss-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/scanoss.json)
+[scanoss-python2.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/scanoss.spdx.json)
 
 ##### 4.1.2.5 Ecosystem: [C++ (Conan)](https://github.com/catchorg/Catch2)
 
-- **Default SBOM:** 
-[scanoss-C++-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/scanoss.json)
+- **Default SBOM:**
+[scanoss-C++-CONAN.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/scanoss.spdx.json)
 
 ##### 4.1 2.6 Ecosystem: [C++ (No package manager)](https://github.com/zeux/meshoptimizer)
 
-- **Default SBOM:** 
-[scanoss-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/scanoss.json)
+- **Default SBOM:**
+[scanoss-C++.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/scanoss.spdx.json)
 
 - **Compilation Step:**
 
-The project was configured and built in Release mode using CMake .following commands were executed: 
--  Configure the project: 
+The project was configured and built in Release mode using CMake .following commands were executed:
+-  Configure the project:
 ```
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 ```
@@ -413,44 +413,44 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
 - **Enriched SBOMs:**
-[scanoss-C++-compilation.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/scanoss-build.json)
+[scanoss-C++-compilation.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/scanoss-build.spdx.json)
 
 ##### 4.1.2.7 Ecosystem: [C (No package manager)](https://github.com/besser82/libxcrypt)
 
-- **Default SBOM:** 
-[scanoss-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/scanoss.json)
+- **Default SBOM:**
+[scanoss-C.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/scanoss.spdx.json)
 
 - **Compilation Step:**
 
-The project was configured and built using the standard autotools workflow. following commands were executed in project root: 
+The project was configured and built using the standard autotools workflow. following commands were executed in project root:
 -  Prepare the build system:
 ```
 /autogen.sh
 ```
-- Configure the project 
+- Configure the project
 ```
-./configure 
+./configure
 ```
-- Compile the project 
+- Compile the project
 ```
-make 
+make
 ```
 - **Enriched SBOMs:**
-[scanoss-C-compilation.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/scanoss-build.json)
+[scanoss-C-compilation.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/scanoss-build.spdx.json)
 
-##### 4.1.2.8 Ecosystem: [Java (Maven-managed)](https://github.com/bytedeco/javacv) 
+##### 4.1.2.8 Ecosystem: [Java (Maven-managed)](https://github.com/bytedeco/javacv)
 
 - **Default SBOM:**
-[scanoss-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/scanoss.json)
+[scanoss-Java.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/scanoss.spdx.json)
 
 - **Compilation Step:**
 
-To compile the project and resolve all dependencies, the following command was executed: 
+To compile the project and resolve all dependencies, the following command was executed:
 ```
 mvn clean install -DskipTests
 ```
 - **Enriched SBOMs:**
-[scanoss-Java-compilation.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/scanoss-build.json)
+[scanoss-Java-compilation.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/scanoss-build.spdx.json)
 
 ##### 4.1.2.9 Using SCANOSS with API Key
 
@@ -461,12 +461,12 @@ export SCANOSS_API_KEY="your-api-key"
 ```
 Then, run the scan command to analyze the project and output the raw results in JSON format:
 ```
-scanoss-py scan --key $SCANOSS_API_KEY -o results.json .
+scanoss-py scan --key $SCANOSS_API_KEY -o results.spdx.json .
 ```
 
 > **Note:** SBOMs were also generated using the SCANOSS ***API key*** for authenticated scanning. While the number of detected packages remained almost unchanged compared to unauthenticated runs, using the API key removes rate limits and allows continuous SBOM generation without waiting periods.
 
-#### 4.1.3. [Trivy](https://github.com/aquasecurity/trivy)  
+#### 4.1.3. [Trivy](https://github.com/aquasecurity/trivy)
 
 **Command:** (In test target root):
 
@@ -474,41 +474,41 @@ scanoss-py scan --key $SCANOSS_API_KEY -o results.json .
 trivy fs --format spdx-json --scanners vuln,license,secret,misconfig --output trivy-sbom.spdx.json .
 ```
 
-##### 4.1.3.1 Ecosystem:* [Node.js](https://github.com/expressjs/express)  
+##### 4.1.3.1 Ecosystem:* [Node.js](https://github.com/expressjs/express)
 
 ***Default SBOM:***
-[trivy-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/trivy.default.json)
+[trivy-Nodejs.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/trivy.default.spdx.json)
 
 - **Compilation Step:**
 
-The project did not originally include a package-lock.json file, which is required to resolve and capture the full dependency tree without actually installing dependencies, the following command was executed in test target root: 
+The project did not originally include a package-lock.json file, which is required to resolve and capture the full dependency tree without actually installing dependencies, the following command was executed in test target root:
 
 ```
-npm install --package-lock-only 
+npm install --package-lock-only
 ```
 
 **Created Files:**
 
 - ***package-lock.json***
 
-To create a clean environment with only production dependencies installed (excluding devDependencies), the following command was executed: 
+To create a clean environment with only production dependencies installed (excluding devDependencies), the following command was executed:
 
 ```
 npm ci --only=production
 ```
 ***Enriched SBOMs:***
-[trivy-Nodejs-compilation.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/trivy-compilation.json)
+[trivy-Nodejs-compilation.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/trivy-compilation.spdx.json)
 
 ##### 4.1.3.2 Ecosystem: [C++ (Conan)](https://github.com/catchorg/Catch2)
 
 ***Default SBOM:***
-[trivy-C++-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/trivy.json)
+[trivy-C++-CONAN.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/trivy.spdx.json)
 
 ##### 4.1.3.3 Ecosystem: [Go](https://github.com/gohugoio/hugo)
 
 - **Compilation Step:**
 
-To ensure all required dependencies are included and the module files are consistent, the following command was executed in the project root: 
+To ensure all required dependencies are included and the module files are consistent, the following command was executed in the project root:
 
 ```
 go mod tidy
@@ -519,19 +519,19 @@ go mod tidy
 - ***go.mod*** , ***go.sum***
 
 ***Enriched SBOMs:***
-[trivy-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/trivy-compilation.json)
+[trivy-Go.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/trivy-compilation.spdx.json)
 
-##### 4.1.3.4 Ecosystem:** 
+##### 4.1.3.4 Ecosystem:**
 [C++ (No package manager)](https://github.com/zeux/meshoptimizer)
 
 ***Default SBOM:***
-[trivy-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/trivy.json)
+[trivy-C++.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/trivy.spdx.json)
 
 ##### 4.1.3.5 Ecosystem:**
 [Python (FastAPI)](https://github.com/fastapi/fastapi)
 
 ***Default SBOM:***
-[trivy-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/trivy.default.json)
+[trivy-python.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/trivy.default.spdx.json)
 
 - **Compilation Step:**
 
@@ -548,32 +548,32 @@ pdm install
 ```
 
 ***Enriched SBOMs:***
-[trivy-python-compilation](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/trivy-compilation.json)
+[trivy-python-compilation.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/trivy-compilation.spdx.json)
 
-> **Note:** As of now, Trivy does not support scanning Python projects managed with PDM. Specifically, Trivy does not parse the pdm.lock file, which means it cannot fully resolve and capture the project's dependency tree. This limitation affects the accuracy and completeness of Software Bill of Materials (SBOM) generation for PDM-managed Python projects. 
+> **Note:** As of now, Trivy does not support scanning Python projects managed with PDM. Specifically, Trivy does not parse the pdm.lock file, which means it cannot fully resolve and capture the project's dependency tree. This limitation affects the accuracy and completeness of Software Bill of Materials (SBOM) generation for PDM-managed Python projects.
 
-For more information and to track the progress of this feature, refer to the following GitHub issue: 
+For more information and to track the progress of this feature, refer to the following GitHub issue:
 [Trivy GitHub Issue: Add support for PDM lockfile parsing](https://github.com/aquasecurity/trivy/issues/9410?utm_source=chatgpt.com)
 
 ##### 4.1.3.6 Ecosystem: [Python (GPT Engineer)](https://github.com/AntonOsika/gpt-engineer)
 
 ***Default SBOM:***
-[trivy-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/trivy.json)
+[trivy-python2.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/trivy.spdx.json)
 
-**3.7 Ecosystem:** 
+**3.7 Ecosystem:**
 [C (No package manager)](https://github.com/besser82/libxcrypt)
 
 ***Default SBOM:***
-[trivy-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/trivy.json)
+[trivy-C.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/trivy.spdx.json)
 
 **3.8 Ecosystem:**
-[Java (Maven-managed)](https://github.com/bytedeco/javacv) 
+[Java (Maven-managed)](https://github.com/bytedeco/javacv)
 
 ***Default SBOM:***
-[trivy-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/trivy-default.json)
+[trivy-Java.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/trivy-default.spdx.json)
 
 
-#### 4.1.4 [ORT](https://github.com/oss-review-toolkit/ort)  
+#### 4.1.4 [ORT](https://github.com/oss-review-toolkit/ort)
 
 **Command:**
 
@@ -581,164 +581,164 @@ For generating SBOMs for all test targets these commands are used:
 
 **Analyze phase:**
 ```
-ort analyze -i /path/to/your/project -o /path/to/output-dir 
+ort analyze -i /path/to/your/project -o /path/to/output-dir
 ```
 
 **Report phase:**
 ```
-ort report -i /path/to/analyzer-result.yml -o /path/to/output-dir -f spdxDocument 
+ort report -i /path/to/analyzer-result.yml -o /path/to/output-dir -f spdxDocument
 ```
 
->***Note:*** The resulting output is an SBOM compliant with SPDX version 2.2, delivered as a YAML file. Although the maintainers of ORT suggested the use of the following parameter to enforce SPDX version 2.3, no version change was observed in practice: 
+>***Note:*** The resulting output is an SBOM compliant with SPDX version 2.2, delivered as a YAML file. Although the maintainers of ORT suggested the use of the following parameter to enforce SPDX version 2.3, no version change was observed in practice:
 ```
--O SpdxDocument=spdx_version=SPDX-2.3 
+-O SpdxDocument=spdx_version=SPDX-2.3
 ```
 
-The generation of an **SBOM** with the **ORT** is structured into several phases: 
+The generation of an **SBOM** with the **ORT** is structured into several phases:
 
-•	**Analyzer** 
+•	**Analyzer**
 
 •	**Scanner**
 
-•	**Advisor** 
+•	**Advisor**
 
-•	**Evaluator** 
+•	**Evaluator**
 
 •	**Reporter**
 
-These phases can either be executed sequentially or selectively, depending on the requirements. The **Analyzer Phase** is ***mandatory***, as its output serves as the essential input for all subsequent stages and therefore cannot be omitted. 
+These phases can either be executed sequentially or selectively, depending on the requirements. The **Analyzer Phase** is ***mandatory***, as its output serves as the essential input for all subsequent stages and therefore cannot be omitted.
 
-In the examined workflow, only the Analyzer and Reporter phases were executed. 
-The Analyzer phase produces the file ***analyzer-result.yml*** 
+In the examined workflow, only the Analyzer and Reporter phases were executed.
+The Analyzer phase produces the file ***analyzer-result.yml***
 Then the Reporter phase use this file as input file.
 
 ##### 4.1.4.1 Ecosystem: [Go](https://github.com/gohugoio/hugo)
 
-In this project, the following files were identified: 
+In this project, the following files were identified:
 
-- ***docs/go.mod*** , ***go.mod*** , ***docs/package.json*** , ***internal/warpc/js/package.json*** 
+- ***docs/go.mod*** , ***go.mod*** , ***docs/package.json*** , ***internal/warpc/js/package.json***
 
-Indicating the use of two different **Package Managers**: 
+Indicating the use of two different **Package Managers**:
 
-- **GoMod & NPM** 
+- **GoMod & NPM**
 
->***Note:*** The **SBOM** was successfully generated without any errors and without the need for any modifications or special configurations. 
+>***Note:*** The **SBOM** was successfully generated without any errors and without the need for any modifications or special configurations.
 
 **Generated SBOM:**
-[ORT-GO.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/ort.json)
+[ORT-GO.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/ort.spdx.json)
 
 ##### 4.1.4.2 Ecosystem: [C (No package manager)](https://github.com/besser82/libxcrypt)
 
 Given that ORT relies on a package manager for SBOM generation, and no package manager was present in this project, the generated SBOM only included the project name as a package.
 
 **Generated SBOM:**
-[ORT-C-NP.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/ort%20.json)
+[ORT-C-NP.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/ort.spdx.json)
 
 ##### 4.1.4.3 Ecosystem: [C++ (No package manager)](https://github.com/zeux/meshoptimizer)
 
-In this project, no package manager associated with C++ was identified; However, in the two files listed below, **NPM-related Packages** were detected. 
+In this project, no package manager associated with C++ was identified; However, in the two files listed below, **NPM-related Packages** were detected.
 
 - ***gltf/package.json*** , ***js/package.json***
 
 **Generated SBOM:**
-[ORT-C++-NP.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/ortC%2B%2BMeShop.json)
+[ORT-C++-NP.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/ortC%2B%2BMeShop.spdx.json)
 
 
-##### 4.1.4.4 Ecosystem: [Node.js](https://github.com/expressjs/express)  
+##### 4.1.4.4 Ecosystem: [Node.js](https://github.com/expressjs/express)
 
-In this project, the following file was identified: 
+In this project, the following file was identified:
 
 - ***Package.json***
 
-indicating the use of a package manager: 
+indicating the use of a package manager:
 
-- ***NPM*** 
+- ***NPM***
 
 >***Note:*** The **SBOM** was successfully generated without any errors and without the need for any modifications or special configurations.
 
 **Generated SBOM:**
-[ORT-Node-js.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/node.js.ORT.ScanSbom.json)
+[ORT-Node-js.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/node.js.ORT.ScanSbom.spdx.json)
 
 
-##### 4.1.4.5 Ecosystem: [Java (Maven-managed)](https://github.com/bytedeco/javacv) 
+##### 4.1.4.5 Ecosystem: [Java (Maven-managed)](https://github.com/bytedeco/javacv)
 
-During the process, an error related to the Maven compiler was encountered, which necessitated modifications in the ***pom.xml*** file as described below: 
+During the process, an error related to the Maven compiler was encountered, which necessitated modifications in the ***pom.xml*** file as described below:
 
-        <artifactId>maven-compiler-plugin</artifactId> 
+        <artifactId>maven-compiler-plugin</artifactId>
 
-        <version>3.12.1</version> 
+        <version>3.12.1</version>
 
-        <configuration> 
+        <configuration>
 
-          <source>1.8</source> 
+          <source>1.8</source>
 
-          <target>1.8</target> 
+          <target>1.8</target>
 
-In addition, the following three files were identified: 
+In addition, the following three files were identified:
 
 - ***platform/pom.xml*** ,  ***pom.xml*** , ***samples/pom.xml***
 
-Indicating that the project relied on a single package manager: 
+Indicating that the project relied on a single package manager:
 
-- ***Maven*** 
+- ***Maven***
 
 After the version was corrected, **ORT** was ultimately able to generate the **SBOM** successfully without errors.
 
 **Generated SBOM:**
-[ORT-Java-Maven.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/normal.ort.json)
+[ORT-Java-Maven.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/normal.ort.spdx.json)
 
 ##### 4.1.4.6 Ecosystem: [C++ (Conan)](https://github.com/catchorg/Catch2)
 
-In this section, several points should be highlighted.  
+In this section, several points should be highlighted.
 
-- First, since ORT encountered errors with Conan versions 2.x, it was necessary to downgrade Conan to version 1.66.0.  
+- First, since ORT encountered errors with Conan versions 2.x, it was necessary to downgrade Conan to version 1.66.0.
 
-- Second, because a Linux-based operating system was used, one of the viable approaches for installing Conan involved the creation of a conan-venv, which was adopted in this case.  
+- Second, because a Linux-based operating system was used, one of the viable approaches for installing Conan involved the creation of a conan-venv, which was adopted in this case.
 
-It should also be noted that the project included Bazel; therefore, ***Bazel(version:8.3.1)*** and ***Buildizer(version:1.5.0)*** were installed, as **ORT** would otherwise have failed with errors.  
+It should also be noted that the project included Bazel; therefore, ***Bazel(version:8.3.1)*** and ***Buildizer(version:1.5.0)*** were installed, as **ORT** would otherwise have failed with errors.
 
-- Finally, the following files were identified: 
+- Finally, the following files were identified:
 
-- ***MODULE.bazel*** , ***.conan/test_package/conanfile.py*** , ***Conanfile.py*** 
+- ***MODULE.bazel*** , ***.conan/test_package/conanfile.py*** , ***Conanfile.py***
 
-and in total, two package managers were detected: 
+and in total, two package managers were detected:
 
 - ***Bazel & Conan***
 
 **Generated SBOM:**
-[ORT-C++-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/ort.json)
+[ORT-C++-CONAN.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/ort.spdx.json)
 
 ##### 4.1.4.7 Ecosystem: [Python (FastAPI)](https://github.com/fastapi/fastapi)
 
-Since the project utilized the PDM package manager, which was not included in the list of package managers supported by ORT, no SBOM was generated as a result. 
+Since the project utilized the PDM package manager, which was not included in the list of package managers supported by ORT, no SBOM was generated as a result.
 
 
 ##### 4.1.4.8 Ecosystem: [Python (GPT Engineer)](https://github.com/AntonOsika/gpt-engineer)
 
-In this project, the following two files were identified: 
+In this project, the following two files were identified:
 
-- ***projects/example-improve/requirements.txt*** , ***poetry.lock*** 
+- ***projects/example-improve/requirements.txt*** , ***poetry.lock***
 
- Ultimately two package managers were utilized: 
+ Ultimately two package managers were utilized:
 
-- ***PIP & Poetry*** 
+- ***PIP & Poetry***
 
-The SBOM was successfully generated without any errors. 
+The SBOM was successfully generated without any errors.
 
 **Generated SBOM:**
-[ORT-python.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/ort.json)
+[ORT-python.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/ort.spdx.json)
 
 ---
 
-### 4.2 Container-Based SBOM Generation Tools  
+### 4.2 Container-Based SBOM Generation Tools
 
-In the selected project, the container image was based on a Linux distribution. Therefore, in order to properly execute the image and generate its corresponding SBOM, all tasks were carried out within a Linux operating system environment. 
+In the selected project, the container image was based on a Linux distribution. Therefore, in order to properly execute the image and generate its corresponding SBOM, all tasks were carried out within a Linux operating system environment.
 
-#### 4.2.1 [Distro2SBOM](https://github.com/anthonyharrison/distro2SBOM) 
+#### 4.2.1 [Distro2SBOM](https://github.com/anthonyharrison/distro2SBOM)
 
-**Observations:** 
+**Observations:**
 
-In order to generate an SBOM  using distro2sbom, direct access to the root filesystem is required. Since running the tool against the live system root may not always be feasible or safe, the system root was first exported into a separate directory. This exported filesystem served as an isolated input for the SBOM generation process. 
+In order to generate an SBOM  using distro2sbom, direct access to the root filesystem is required. Since running the tool against the live system root may not always be feasible or safe, the system root was first exported into a separate directory. This exported filesystem served as an isolated input for the SBOM generation process.
 
 By performing the export step, distro2sbom was able to analyze the complete set of installed packages and system files, ensuring that the resulting SBOM accurately represents the environment. After the export was completed, the tool was executed against the target directory, successfully producing the SBOM.
 
@@ -746,99 +746,99 @@ By performing the export step, distro2sbom was able to analyze the complete set 
 
 - ***Extract image:***
 ```
-docker create --name tmp <image name> 
+docker create --name tmp <image name>
 ```
 - ***Export container filesystem:***
 ```
-docker export tmp -o <fileName.tar> 
-``` 
+docker export tmp -o <fileName.tar>
+```
 - ***Extract the tar file into root filesystem:***
 ```
-tar -C <directoryName>  -xf <fileName.tar> 
-``` 
+tar -C <directoryName>  -xf <fileName.tar>
+```
 - ***Remove the temporary container:***
 ```
-docker rm tmp 
-``` 
+docker rm tmp
+```
 - ***For Generating SBOM:***
 ```
-distro2sbom --root <path-to-rootFileSystem> -s --sbom <spdx|cyclonedx> --format <json|xml|yaml> -o <path-to-output-file>  
+distro2sbom --root <path-to-rootFileSystem> -s --sbom <spdx|cyclonedx> --format <json|xml|yaml> -o <path-to-output-file>
 ```
 **Generated SBOM:**
-[distro2SBOM.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/distro.json)
+[distro2SBOM.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/distro.spdx.json)
 
 > **Note:**
-Since a Linux environment was used, a dedicated Python virtual environment was created to ensure isolation and reproducibility. In this environment, the distro2sbom tool was installed as the main tool for generating SBOM. 
+Since a Linux environment was used, a dedicated Python virtual environment was created to ensure isolation and reproducibility. In this environment, the distro2sbom tool was installed as the main tool for generating SBOM.
 
 
 #### 4.2.2 [Tern](https://github.com/tern-tools/tern)
-There are three main approaches to generating an SBOM with Tern: 
+There are three main approaches to generating an SBOM with Tern:
 
-**1.	Analyzing an exported root filesystem:** 
-In this method, the system’s root filesystem is exported into a dedicated directory.   
-Tern is then executed against that directory to analyze all installed packages and generate the SBOM.  
+**1.	Analyzing an exported root filesystem:**
+In this method, the system’s root filesystem is exported into a dedicated directory.
+Tern is then executed against that directory to analyze all installed packages and generate the SBOM.
 **Commands:**
 ```
-docker export $(docker create <image name>) | tar -C  </path/to/directory> -xvf –  
+docker export $(docker create <image name>) | tar -C  </path/to/directory> -xvf –
 ```
 
 ```
-tern report -l </path/to/directory>  -f spdxjson -o <path/to/output/name.spdx.json>   
+tern report -l </path/to/directory>  -f spdxjson -o <path/to/output/name.spdx.json>
 ```
 **Generated SBOM:**
-[tern.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/tern.json)
+[tern.spdx.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/tern.spdx.json)
 
 **2.⁠ ⁠Parsing a Dockerfile:**
 Tern can process a Dockerfile directly to infer the layers and dependencies defined in the build instructions.
 **Commands:**
 ```
-tern report -d Dockerfile -o <path/to/output/name.spdx.json> -f json   
+tern report -d Dockerfile -o <path/to/output/name.spdx.json> -f json
 ```
 **Generated SBOM:**
-[tern-docker.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/tern-docer.json)
+[tern-docker.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/tern-docker.spdx.json)
 
 **3.⁠ ⁠Directly analyzing a container image: (not used in this project)**
-Tern can be pointed to a container image (local or remote) to generate an SBOM without needing the Dockerfile or exported filesystem. 
+Tern can be pointed to a container image (local or remote) to generate an SBOM without needing the Dockerfile or exported filesystem.
 
 **Commands:**
 ```
-tern report -i <image:tag> > sbom_image.json   
+tern report -i <image:tag> > sbom_image.json
 ```
 
 #### 4.2.3 [Syft](https://github.com/anchore/syft)
 
-In this project, two approaches were applied to generate SBOM using Syft: 
+In this project, two approaches were applied to generate SBOM using Syft:
 
-**1.	Image-based SBOM generation:** 
-- A Docker image was built locally from the project’s Dockerfile. 
+**1.	Image-based SBOM generation:**
+- A Docker image was built locally from the project’s Dockerfile.
 -	Syft was then executed against the built image (pggb:latest) to produce an SBOM that reflects all installed packages and dependencies inside the container environment.
 
-**Commands:** 
+**Commands:**
 ```
-docker build -t <image:tag> .   
-```
-
-```
-docker run --rm -it <image:tag> bash  
+docker build -t <image:tag> .
 ```
 
 ```
-syft <image:tag>  -o spdx-json > <out put name.json> 
-``` 
+docker run --rm -it <image:tag> bash
+```
+
+```
+syft <image:tag>  -o spdx-json > <out put name.json>
+```
 **Generated SBOM:**
-[syft.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/syft.json)
+[syft.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/syft.spdx.json)
 
 **2.	Source-based SBOM generation:**
-- Instead of analyzing the image, Syft was run directly on the project’s source code directory (./). 
-- This method inspects the manifests and dependency files present in the source to generate the SBOM. 
+- Instead of analyzing the image, Syft was run directly on the project’s source code directory (./).
+- This method inspects the manifests and dependency files present in the source to generate the SBOM.
 
-**Commands:** 
+**Commands:**
 ```
-syft dir:./ -o spdx-json > <out put name.json> 
+syft dir:./ -o spdx-json > <out put name.json>
 ```
 
 **Generated SBOM:**
-[syft-source.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/Syft-source.json)
+[syft-source.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/Syft-source.spdx.json)
 
 ---
 
@@ -848,32 +848,32 @@ syft dir:./ -o spdx-json > <out put name.json>
 
 #### 5.1.1 General Ecosystems:
 
-Ecosystems were categorized based on package manager maturity, which directly impacted SBOM completeness and accuracy in the test materials analyzed. 
+Ecosystems were categorized based on package manager maturity, which directly impacted SBOM completeness and accuracy in the test materials analyzed.
 
-##### 5.1.1.2 Mature, Rich, and Well-Integrated Ecosystems:  
+##### 5.1.1.2 Mature, Rich, and Well-Integrated Ecosystems:
 
-- **Java(Maven):** Building the project ensured all direct and transitive dependencies were captured, resulting in a complete SBOM. 
+- **Java(Maven):** Building the project ensured all direct and transitive dependencies were captured, resulting in a complete SBOM.
 
-- **Node.js(npm):** Preparing a production-only environment allowed SBOM tools to accurately capture runtime dependencies. 
+- **Node.js(npm):** Preparing a production-only environment allowed SBOM tools to accurately capture runtime dependencies.
 
-- **Python(Poetry):** Installing production dependencies produced richer SBOMs with full dependency resolution. 
+- **Python(Poetry):** Installing production dependencies produced richer SBOMs with full dependency resolution.
 
-- **Go:** Tidying modules and including vendored dependencies ensured a complete, reproducible dependency graph. 
+- **Go:** Tidying modules and including vendored dependencies ensured a complete, reproducible dependency graph.
 
 > **Note:** All have strong version resolution, standard registries, and are SBOM-ready.
 
 
-##### 5.1.1.3 Functional but Inconsistent / Intermediate:  
+##### 5.1.1.3 Functional but Inconsistent / Intermediate:
 
-- **Python(PDM):** Even after dependency preparation, SBOMs remained limited, indicating partial compatibility with tools like Trivy and SCANOSS. 
+- **Python(PDM):** Even after dependency preparation, SBOMs remained limited, indicating partial compatibility with tools like Trivy and SCANOSS.
 
 > **Note:** Good dependency management and lockfile support, but limited ecosystem maturity and metadata consistency.
 
-##### 5.1.1.4 Fragmented or Build-System-Dependent: 
+##### 5.1.1.4 Fragmented or Build-System-Dependent:
 
-- **C/C++(manual/CMake):** SBOMs captured only source files; dependency metadata was largely absent. 
+- **C/C++(manual/CMake):** SBOMs captured only source files; dependency metadata was largely absent.
 
-- **C++(Conan):** Dependency structure improved, but SBOM completeness varied due to inconsistent metadata. 
+- **C++(Conan):** Dependency structure improved, but SBOM completeness varied due to inconsistent metadata.
 
 > **Note:** Conan adds structure but depends on how developers define packages (no universal lockfile standard, no uniform registry metadata.
 
@@ -965,8 +965,8 @@ The results were summarized in the following tables:
 | Java_Maven       |  -  | Invalid SPDX file             | The generated JSON is not recognized as a valid SPDX file by the validator, no validation could be performed   |
 | C           |   -  |  -           | Only the project itself was included as a package      |
 | C++ (Conan) |    Not compliant  | NTIA validation errors, Missing mandatory fields          | Multiple packages missing version or supplier; CreatorComment and Organization fields in CreationInfo missing  |
-| C++  |    -   |  -                                   |    Only the project itself and two NPM packages were included as packages   |       
-| Python2  |     Not compliant            |              SPDX validation errors, NTIA validation errors, Missing mandatory fields                       |      Several referenced SPDX IDs not found; packages missing supplier info and CreatorComment; unsupported PDM package manager     | 
+| C++  |    -   |  -                                   |    Only the project itself and two NPM packages were included as packages   |
+| Python2  |     Not compliant            |              SPDX validation errors, NTIA validation errors, Missing mandatory fields                       |      Several referenced SPDX IDs not found; packages missing supplier info and CreatorComment; unsupported PDM package manager     |
 
 >**Note:** ORT-generated SBOMs revealed recurring issues across ecosystems, including missing supplier information, CreatorComment, and Organization fields in CreationInfo. In some cases, no SBOM was created or the JSON was rejected as invalid SPDX, because ORT relies on a supported package manager to generate SBOMs.
 
@@ -1001,12 +1001,12 @@ The results were summarized in the following tables:
 | Container Image |  Not compliant |NTIA validation errors, Missing mandatory fields| File missing or packages without version/supplier; missing CreatorComment and Organization fields
 
 > **Notes:**
-> - **NTIA validation errors:** indicate missing required metadata fields such as `version`, `supplier`, or `license`.  
+> - **NTIA validation errors:** indicate missing required metadata fields such as `version`, `supplier`, or `license`.
 > - **Missing mandatory fields:** generally refer to incomplete `CreationInfo` (e.g., `CreatorComment`, `Organization`) or missing package-level metadata.
-> - **Compliant:** The SBOM meets all required specifications of the OpenChain Telco SBOM Guide version 1.1, including mandatory fields and SPDX/JSON format compliance.  
+> - **Compliant:** The SBOM meets all required specifications of the OpenChain Telco SBOM Guide version 1.1, including mandatory fields and SPDX/JSON format compliance.
 > - **Not compliant:** The SBOM fails to meet one or more required specifications, such as missing mandatory fields, invalid SPDX format, or incomplete package metadata.
 
-### 5.3.3 Diffs / Comparisons  
+### 5.3.3 Diffs / Comparisons
 
 The [sbomdiff](https://github.com/anthonyharrison/sbomdiff) | [v0.5.6](https://github.com/anthonyharrison/sbomdiff/releases/tag/v0.5.6) is a Python-based tool used to compare two SBOM  files and identify differences between them. It supports both SPDX and CycloneDX formats and detects:
 
@@ -1043,53 +1043,53 @@ The results were summarized in the following tables:
 
 | Ecosystem   | Compared Files                            | Difference file                      | Version Changes | New Packages | Removed Packages | License Changes  |
 |-------------|---------------------------------------------------------------|---------------------------------------------|----------------|--------------|------------------|-----------------|
-| C           | [Ref-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Reference/besser82_libxcrypt_8ecb92.json) vs [C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/syft.json) | [Diff-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Difference/diff-syft.json) | 7 |     1  |      1         |       7    |        |
-| C++ (Conan) |  [Ref-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Reference/catchorg_Catch2_f38fdc.json) vs [CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/syft.json) | [Diff-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Difference/diff-syft.json) |    3  |   1        |  1            |    3  |         |
-| Python      |  [Ref-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/Reference/fastapi_fastapi_1aca71.json) vs [python.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/syft.json) , [python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/syft.pdm.python.json)  | [Diff-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/difference/diff-syft.json) , [Diff-python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/difference/diff-syft-pdm.json)   |     17* / 35*   | 2* / 149*      |    19* / 1*        |      33* / 51*     |                   |
-| Node.js     |  [Ref-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/Reference/expressjs_express_98d8b1.json) vs [Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/syft-default.json) , [Nodejs-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/syft-lock.json) | [Diff-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-syftdefault.json) , [Diff-Nodejs-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-syft-compilation.json)  |   9* / 36*  |   1* / 40*    |   44* / 17*         |      9* / 36*     |          |
-| Java        | [Ref-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Reference/bytedeco_javacv_1aa2ee.json) vs [Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/syft.json) , [Java-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/syft-compilation.json) |  [Diff-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Difference/diff-normalsyft.json) , [Diff-Java-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Difference/diff-syftbuild.json)  |    1  |   42    |   43      |    4      |         |
-| Go          |  [Ref-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/Reference/gohugoio_hugo_b0888a.json) vs [Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/syft.json)  |  [Diff-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/difference/diff-syft.json)     |   177      |     6      |      13       |      177          |
-| C++         |  [Ref-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Reference/zeux_meshoptimizer_4b6446.json) vs  [C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/syft.json)    |  [Diff-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Difference/diff-C%2B%2B.syft.json)    |     3      |   1       |     1     |    5        |           |
-| Python2     | [Ref-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Reference/AntonOsika_gpt-engineer_818115.json) vs [python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/syft.json) , [python2-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/syft-build.json)  |   [Diff-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Difference/diff-syft.json) , [Diff-python2-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Difference/diff-syftbuild.json) |      9     |     1     |     1     |       198     |  
+| C           | [Ref-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Reference/besser82_libxcrypt_8ecb92.json) vs [C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/syft.spdx.json) | [Diff-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Difference/diff-syft.json) | 7 |     1  |      1         |       7    |        |
+| C++ (Conan) |  [Ref-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Reference/catchorg_Catch2_f38fdc.json) vs [CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/syft.spdx.json) | [Diff-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Difference/diff-syft.json) |    3  |   1        |  1            |    3  |         |
+| Python      |  [Ref-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/Reference/fastapi_fastapi_1aca71.json) vs [python.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/syft.spdx.json) , [python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/syft.pdm.python.spdx.json)  | [Diff-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/difference/diff-syft.json) , [Diff-python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/difference/diff-syft-pdm.json)   |     17* / 35*   | 2* / 149*      |    19* / 1*        |      33* / 51*     |                   |
+| Node.js     |  [Ref-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/Reference/expressjs_express_98d8b1.json) vs [Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/syft-default.spdx.json) , [Nodejs-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/syft-lock.json) | [Diff-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-syftdefault.json) , [Diff-Nodejs-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-syft-compilation.json)  |   9* / 36*  |   1* / 40*    |   44* / 17*         |      9* / 36*     |          |
+| Java        | [Ref-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Reference/bytedeco_javacv_1aa2ee.json) vs [Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/syft.spdx.json) , [Java-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/syft-compilation.spdx.json) |  [Diff-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Difference/diff-normalsyft.json) , [Diff-Java-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Difference/diff-syftbuild.json)  |    1  |   42    |   43      |    4      |         |
+| Go          |  [Ref-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/Reference/gohugoio_hugo_b0888a.json) vs [Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/syft.spdx.json)  |  [Diff-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/difference/diff-syft.json)     |   177      |     6      |      13       |      177          |
+| C++         |  [Ref-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Reference/zeux_meshoptimizer_4b6446.json) vs  [C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/syft.spdx.json)    |  [Diff-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Difference/diff-C%2B%2B.syft.json)    |     3      |   1       |     1     |    5        |           |
+| Python2     | [Ref-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Reference/AntonOsika_gpt-engineer_818115.json) vs [python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/syft.spdx.json) , [python2-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/syft-build.json)  |   [Diff-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Difference/diff-syft.json) , [Diff-python2-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Difference/diff-syftbuild.json) |      9     |     1     |     1     |       198     |
 
 ##### 5.3.3.2 [Trivy](https://github.com/aquasecurity/trivy)
 
 | Ecosystem   | Compared Files                   | Differences file | Version Changes | New Packages | Removed Packages | License Changes  |
 |-------------|-------------------------------------|-----------------------------|----------------|--------------|------------------|-----------------|
-| C           | [Ref-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Reference/besser82_libxcrypt_8ecb92.json) vs [C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/trivy.json)   |  [Diff-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Difference/diff-trivy.json)    |  0   | 1      |    8           |    0       |    
-| C++ (Conan) | [Ref-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Reference/catchorg_Catch2_f38fdc.json)  vs [CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/trivy.json)  |  [Diff-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Difference/diff-trivy.json)    |   0   |    1       |    4         |   0   |     
-| Python      | [Ref-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/Reference/fastapi_fastapi_1aca71.json)  vs [python.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/trivy.default.json) , [python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/trivy-compilation.json)  |      [Diff-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/difference/diff-trivy-default.json) , [Diff-python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/difference/diff-trivy-pdm.json) |   0* / 4*   |  1* /  7*    |   52* /  48*        |      0* / 4*     |     
-| Node.js     |  [Ref-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/Reference/expressjs_express_98d8b1.json) vs [Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/trivy.default.json) , [Nodejs-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/trivy-compilation.json)  | [Diff-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-trivy-def.json) , [Diff-Nodejs-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-trivy-compilation.json)    |  0* / 0*  |  1* / 67*      |  47* / 47*           |     0* / 0*      |    
-| Java        | [Ref-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Reference/bytedeco_javacv_1aa2ee.json) vs [Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/trivy-default.json)    |  [Diff-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Difference/diff-trivy-default.json)    |   13   |  5     |  15       |   18       |   
-| Go          |  [Ref-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/Reference/gohugoio_hugo_b0888a.json) vs [Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/trivy-compilation.json) |  [Diff-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/difference/diff-trivy.json)      |      166     |   7      |      24     |     166        |        
-| C++         | [Ref-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Reference/zeux_meshoptimizer_4b6446.json)  vs  [C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/trivy.json)   |   [Diff-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Difference/diff-C%2B%2B.trivy.json)        |     0      |   1       |   6       |    0        |      
-| Python2     | [Ref-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Reference/AntonOsika_gpt-engineer_818115.json) vs [python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/trivy.json)  |   [Diff-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Difference/diff-trivy.json)     |      2     |     3     |    9      |      190      |    
+| C           | [Ref-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Reference/besser82_libxcrypt_8ecb92.json) vs [C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/trivy.spdx.json)   |  [Diff-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Difference/diff-trivy.json)    |  0   | 1      |    8           |    0       |
+| C++ (Conan) | [Ref-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Reference/catchorg_Catch2_f38fdc.json)  vs [CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/trivy.spdx.json)  |  [Diff-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Difference/diff-trivy.json)    |   0   |    1       |    4         |   0   |
+| Python      | [Ref-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/Reference/fastapi_fastapi_1aca71.json)  vs [python.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/trivy.default.spdx.json) , [python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/trivy-compilation.spdx.json)  |      [Diff-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/difference/diff-trivy-default.json) , [Diff-python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/difference/diff-trivy-pdm.json) |   0* / 4*   |  1* /  7*    |   52* /  48*        |      0* / 4*     |
+| Node.js     |  [Ref-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/Reference/expressjs_express_98d8b1.json) vs [Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/trivy.default.spdx.json) , [Nodejs-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/trivy-compilation.spdx.json)  | [Diff-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-trivy-def.json) , [Diff-Nodejs-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-trivy-compilation.spdx.json)    |  0* / 0*  |  1* / 67*      |  47* / 47*           |     0* / 0*      |
+| Java        | [Ref-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Reference/bytedeco_javacv_1aa2ee.json) vs [Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/trivy-default.spdx.json)    |  [Diff-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Difference/diff-trivy-default.json)    |   13   |  5     |  15       |   18       |
+| Go          |  [Ref-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/Reference/gohugoio_hugo_b0888a.json) vs [Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/trivy-compilation.spdx.json) |  [Diff-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/difference/diff-trivy.json)      |      166     |   7      |      24     |     166        |
+| C++         | [Ref-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Reference/zeux_meshoptimizer_4b6446.json)  vs  [C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/trivy.spdx.json)   |   [Diff-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Difference/diff-C%2B%2B.trivy.json)        |     0      |   1       |   6       |    0        |
+| Python2     | [Ref-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Reference/AntonOsika_gpt-engineer_818115.json) vs [python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/trivy.spdx.json)  |   [Diff-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Difference/diff-trivy.json)     |      2     |     3     |    9      |      190      |
 
 
 ##### 5.3.3.3 [ORT](https://github.com/oss-review-toolkit/ort)
 
-| Ecosystem   | Compared Files                   | Differences file | Version Changes | New Packages | Removed Packages | License Changes  | 
+| Ecosystem   | Compared Files                   | Differences file | Version Changes | New Packages | Removed Packages | License Changes  |
 |-------------|----------------------------------|------------------|----------------|--------------|------------------|-----------------|
 | C           | [Ref-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Reference/besser82_libxcrypt_8ecb92.json) vs [C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/ort%20.json) |      [Diff-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Difference/diff-ortdefault.json)       |  0   |   1    |  8         |   0     |
-| C++ (Conan) | [Ref-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Reference/catchorg_Catch2_f38fdc.json)  vs [CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/ort.json)       |     [Diff-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Difference/diff-ortconan.json)      |  0    |   24        |    4          |   0   |
-| Node.js     |  [Ref-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/Reference/expressjs_express_98d8b1.json) vs [Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/node.js.ORT.ScanSbom.json)   |    [Diff-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-ORT.json)         |  35   |      288   |     10        |    43        |
-| Java        | [Ref-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Reference/bytedeco_javacv_1aa2ee.json)  vs [Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/normal.ort.json)    |       [Diff-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Difference/diff-narmal-ort.json)     |  0    |   44    |    47     |   0       |
-| Go          |  [Ref-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/Reference/gohugoio_hugo_b0888a.json)  vs [Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/ort.json)    |     [Diff-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/difference/diff-ort.json)  |   8      |    62     |     21      |       169      |
-| C++         | [Ref-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Reference/zeux_meshoptimizer_4b6446.json) vs [C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/ortC%2B%2BMeShop.json)  |      [Diff-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Difference/diff-C%2B%2B.ORT.json)      |    0       |    2      |     6     |     0       |   
-| Python2     | [Ref-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Reference/AntonOsika_gpt-engineer_818115.json) vs [python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/ort.json)      |    [Diff-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Difference/diff-ort.json)     |      131     |   7       |   19       |   180         |
+| C++ (Conan) | [Ref-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Reference/catchorg_Catch2_f38fdc.json)  vs [CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/ort.spdx.json)       |     [Diff-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Difference/diff-ortconan.json)      |  0    |   24        |    4          |   0   |
+| Node.js     |  [Ref-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/Reference/expressjs_express_98d8b1.json) vs [Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/node.js.ORT.ScanSbom.spdx.json)   |    [Diff-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-ORT.json)         |  35   |      288   |     10        |    43        |
+| Java        | [Ref-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Reference/bytedeco_javacv_1aa2ee.json)  vs [Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/normal.ort.spdx.json)    |       [Diff-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Difference/diff-narmal-ort.json)     |  0    |   44    |    47     |   0       |
+| Go          |  [Ref-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/Reference/gohugoio_hugo_b0888a.json)  vs [Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/ort.spdx.json)    |     [Diff-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/difference/diff-ort.json)  |   8      |    62     |     21      |       169      |
+| C++         | [Ref-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Reference/zeux_meshoptimizer_4b6446.json) vs [C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/ortC%2B%2BMeShop.json)  |      [Diff-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Difference/diff-C%2B%2B.ORT.json)      |    0       |    2      |     6     |     0       |
+| Python2     | [Ref-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Reference/AntonOsika_gpt-engineer_818115.json) vs [python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/ort.spdx.json)      |    [Diff-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Difference/diff-ort.json)     |      131     |   7       |   19       |   180         |
 
 ##### 5.3.3.4 [SCANOSS](https://github.com/scanoss/scanoss.py)
 
-| Ecosystem   | Compared Files                   | Differences file | Version Changes | New Packages | Removed Packages | License Changes  | 
+| Ecosystem   | Compared Files                   | Differences file | Version Changes | New Packages | Removed Packages | License Changes  |
 |-------------|----------------------------------|------------------|----------------|--------------|------------------|-----------------|
-| C           | [Ref-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Reference/besser82_libxcrypt_8ecb92.json) vs [C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/scanoss.json) , [C-comp.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/scanoss-build.json) |    [Diff-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Difference/diff-scanoss.json) , [Diff-C-comp.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Difference/diff-scanoss-build.json)     |    0* / 0* |    2* / 17*   |    8* / 8*           |   0* / 0*      |
-| C++ (Conan) | [Ref-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Reference/catchorg_Catch2_f38fdc.json) vs [CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/scanoss.json)       |    [Diff-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Difference/diff-scanoss.json)         |    0* / 0* |     16* / 17*     |    4* / 4*        |   0* / 0*    |
-| Python      | [Ref-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/Reference/fastapi_fastapi_1aca71.json)   vs [python.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/scanoss-default.json) , [python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/scanoss-vendor.json)     |    [Diff-python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/difference/diff-scanoss-default.json) , [Diff-python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/difference/diff-sacnoss-vendor.json)         |    0* / 4*   |   3* / 29*     |    52* / 48*        |   0* / 4*        | 
-| Node.js     |  [Ref-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/Reference/expressjs_express_98d8b1.json) vs [Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/scanoss.json) , [Nodejs-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/scanoss-compilation.json)   |  [Diff-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-scanoss.json) , [Diff-Nodejs-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-scanoss-compilation.json)     | 0* / 20*    |  14* / 54*      |     53* / 33*        |         0* / 20* | 
-| Java        | [Ref-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Reference/bytedeco_javacv_1aa2ee.json)  vs [Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/scanoss.json) , [Java-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/scanoss-build.json)      |   [Diff-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Difference/diff-normalscanoss.json) , [Diff-Java-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Difference/diff-scanoss-build.json)   |    0* / 0*  |   1* / 9*    |   47* / 47*      |   0* / 0*      |
-| Go          |  [Ref-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/Reference/gohugoio_hugo_b0888a.json) vs [Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/scanoss.json) , [Go-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/scanoss-compilation.json)   |     [Diff-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/difference/diff-scanoss.json) , [Diff-Go-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Go/difference/diff-scanoss-compilation.json) |         0* / 0* |    15* / 352*    |    190* /  190*      |   0* / 0*        | 
-| C++         | [Ref-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Reference/zeux_meshoptimizer_4b6446.json)  vs  [C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/scanoss.json) , [C++-comp.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/scanoss-build.json)       |    [Diff-C++-comp.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Difference/diff-C%2B%2B.scanoss.json) , [Diff-C++-comp.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Difference/diff-C%2B%2B.scanoss-build.json) |   0* / 0*        |   8* / 16*     |    6* / 6*      |      0* / 0*    | 
-| Python2     | [Ref-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Reference/AntonOsika_gpt-engineer_818115.json)  vs [python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/scanoss.json)      |    [Diff-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Difference/diff-scanoss.json) |   0        |   2       |   199       |    0        |     
+| C           | [Ref-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Reference/besser82_libxcrypt_8ecb92.json) vs [C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/scanoss.spdx.json) , [C-comp.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/SBOM/scanoss-build.spdx.json) |    [Diff-C.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Difference/diff-scanoss.json) , [Diff-C-comp.json](https://github.com/nokia/SBOM-QA/blob/main/C-NP/Difference/diff-scanoss-build.json)     |    0* / 0* |    2* / 17*   |    8* / 8*           |   0* / 0*      |
+| C++ (Conan) | [Ref-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Reference/catchorg_Catch2_f38fdc.json) vs [CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/SBOM/scanoss.spdx.json)       |    [Diff-CONAN.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B_CONAN/Difference/diff-scanoss.json)         |    0* / 0* |     16* / 17*     |    4* / 4*        |   0* / 0*    |
+| Python      | [Ref-python.json](https://github.com/nokia/SBOM-QA/blob/main/python/Reference/fastapi_fastapi_1aca71.json)   vs [python.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/scanoss-default.spdx.json) , [python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/SBOM/scanoss-vendor.json)     |    [Diff-python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/difference/diff-scanoss-default.json) , [Diff-python-comp.json](https://github.com/nokia/SBOM-QA/blob/main/python/difference/diff-sacnoss-vendor.json)         |    0* / 4*   |   3* / 29*     |    52* / 48*        |   0* / 4*        |
+| Node.js     |  [Ref-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/Reference/expressjs_express_98d8b1.json) vs [Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/scanoss.spdx.json) , [Nodejs-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/SBOM/scanoss-compilation.spdx.json)   |  [Diff-Nodejs.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-scanoss.json) , [Diff-Nodejs-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Node.js/difference/diff-scanoss-compilation.json)     | 0* / 20*    |  14* / 54*      |     53* / 33*        |         0* / 20* |
+| Java        | [Ref-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Reference/bytedeco_javacv_1aa2ee.json)  vs [Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/scanoss.spdx.json) , [Java-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/SBOM/scanoss-build.spdx.json)      |   [Diff-Java.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Difference/diff-normalscanoss.json) , [Diff-Java-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Java_Maven/Difference/diff-scanoss-build.json)   |    0* / 0*  |   1* / 9*    |   47* / 47*      |   0* / 0*      |
+| Go          |  [Ref-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/Reference/gohugoio_hugo_b0888a.json) vs [Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/scanoss.spdx.json) , [Go-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Go/SBOM/scanoss-compilation.spdx.json)   |     [Diff-Go.json](https://github.com/nokia/SBOM-QA/blob/main/Go/difference/diff-scanoss.json) , [Diff-Go-comp.json](https://github.com/nokia/SBOM-QA/blob/main/Go/difference/diff-scanoss-compilation.json) |         0* / 0* |    15* / 352*    |    190* /  190*      |   0* / 0*        |
+| C++         | [Ref-C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Reference/zeux_meshoptimizer_4b6446.json)  vs  [C++.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/scanoss.spdx.json) , [C++-comp.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/SBOM/scanoss-build.spdx.json)       |    [Diff-C++-comp.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Difference/diff-C%2B%2B.scanoss.json) , [Diff-C++-comp.json](https://github.com/nokia/SBOM-QA/blob/main/C%2B%2B-NP/Difference/diff-C%2B%2B.scanoss-build.json) |   0* / 0*        |   8* / 16*     |    6* / 6*      |      0* / 0*    |
+| Python2     | [Ref-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Reference/AntonOsika_gpt-engineer_818115.json)  vs [python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/SBOM/scanoss.spdx.json)      |    [Diff-python2.json](https://github.com/nokia/SBOM-QA/blob/main/Python2/Difference/diff-scanoss.json) |   0        |   2       |   199       |    0        |
 
 > ***Note:** Each pair of numbers (e.g., ` 2* / 17* `) represents default / post-compilation results from the difference files, where the first value corresponds to the default SBOM and the second to the post-compilation SBOM.
 
@@ -1102,16 +1102,16 @@ The results were summarized in the following tables:
 ###### 5.3.3.5 [distro2SBOM](https://github.com/anthonyharrison/distro2SBOM)
 |  Compared Files                   | Differences file | Version Changes | New Packages | Removed Packages | License Changes  |
 |----------------------------------|------------------|----------------|--------------|------------------|-----------------|
-[Ref-Container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Reference/pangenome_pggb_4e1835.json) vs [distro.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/distro.json)  |    [Diff-distro.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Difference/diff-distro.json)         | 0    |  363     |  7             |  0         |
+[Ref-Container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Reference/pangenome_pggb_4e1835.json) vs [distro.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/distro.spdx.json)  |    [Diff-distro.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Difference/diff-distro.json)         | 0    |  363     |  7             |  0         |
 
 ###### 5.3.3.6 [Tern](https://github.com/tern-tools/tern)
 |  Compared Files                   | Differences Found | Version Changes | New Packages | Removed Packages | License Changes  |
 |----------------------------------|------------------|----------------|--------------|------------------|-----------------|
-[Ref-Container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Reference/pangenome_pggb_4e1835.json) vs [tern.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/tern.json) , [tern-docker.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/tern-docer.json) |    [Diff-tern.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Difference/diff-tern.json) , [Diff-tern-docker](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Difference/diff-tern-docker.json)   |  0* / 0*   |  362* / 127*  |      7* / 7*   |     0* / 0*     |
+[Ref-Container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Reference/pangenome_pggb_4e1835.json) vs [tern.spdx.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/tern.spdx.json) , [tern-docker.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/tern-docker.spdx.json) |    [Diff-tern.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Difference/diff-tern.json) , [Diff-tern-docker](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Difference/diff-tern-docker.json)   |  0* / 0*   |  362* / 127*  |      7* / 7*   |     0* / 0*     |
 
 ###### 5.3.3.7 [Syft](https://github.com/anchore/syft)
 |  Compared Files                   | Differences Found | Version Changes | New Packages | Removed Packages | License Changes  |
 |----------------------------------|------------------|----------------|--------------|------------------|-----------------|
-[Ref-Container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Reference/pangenome_pggb_4e1835.json) vs [syft-container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/syft.json) , [syft-source-container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/Syft-source.json)  |   [Diff-syft-container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Difference/diff-syft.json) , [diff-syft-source-container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Difference/diff-syft-source.json)        |  0* / 2*  |   485* / 1*   |    7* / 5*          |     0* / 2*    |  
+[Ref-Container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Reference/pangenome_pggb_4e1835.json) vs [syft-container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/syft.spdx.json) , [syft-source-container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/SBOM/Syft-source.spdx.json)  |   [Diff-syft-container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Difference/diff-syft.json) , [diff-syft-source-container.json](https://github.com/nokia/SBOM-QA/blob/main/ContainerImage/Difference/diff-syft-source.json)        |  0* / 2*  |   485* / 1*   |    7* / 5*          |     0* / 2*    |
 
 > **Note:**  Each pair of values (e.g., `0* / 2*`) represents results from two phases — the first value corresponds to the SBOM generated in the **first phase** (default/root filesystem or image-based), and the second value corresponds to the **second phase** (Dockerfile-based or source-based) analysis.

@@ -1,4 +1,4 @@
-Validating node.js.ORT.ScanSbom.json
+Validating node.js.ORT.ScanSbom.spdx.json
 +-----+--------------+--------------+---------------------------+---------------------------+
 | #   | Error type   | SPDX ID      | Package name              | Reason                    |
 +-----+--------------+--------------+---------------------------+---------------------------+
@@ -1065,4 +1065,4 @@ Validating node.js.ORT.ScanSbom.json
 |     | ationInfo::C |              |                           |                           |
 |     | reator       |              |                           |                           |
 +-----+--------------+--------------+---------------------------+---------------------------+
-The SPDX file final.projects/node.js/node.js.ORT.ScanSbom.json is not compliant with the OpenChain Telco SBOM Guide version 1.1
+The SPDX file final.projects/node.js/node.js.ORT.ScanSbom.spdx.json is not compliant with the OpenChain Telco SBOM Guide version 1.1

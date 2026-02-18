@@ -4,7 +4,7 @@
     "version": "0.5.6"
   },
   "file_1": "SBOM-QA/python/fastapi_fastapi_1aca71.json",
-  "file_2": "Downloads/fastapi/scanoss-default.json",
+  "file_2": "Downloads/fastapi/scanoss-default.spdx.json",
   "differences": [
     {
       "package": "playwright",

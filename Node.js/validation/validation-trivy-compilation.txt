@@ -1,4 +1,4 @@
-Validating trivy-compilation.json
+Validating trivy-compilation.spdx.json
 +----+--------------+--------------+-------------------------+---------------------------+
 | #  | Error type   | SPDX ID      | Package name            | Reason                    |
 +----+--------------+--------------+-------------------------+---------------------------+
@@ -346,4 +346,4 @@ Validating trivy-compilation.json
 |    | field from   |              |                         |                           |
 |    | CreationInfo |              |                         |                           |
 +----+--------------+--------------+-------------------------+---------------------------+
-The SPDX file Downloads/trivy-compilation.json is not compliant with the OpenChain Telco SBOM Guide version 1.1
+The SPDX file Downloads/trivy-compilation.spdx.json is not compliant with the OpenChain Telco SBOM Guide version 1.1

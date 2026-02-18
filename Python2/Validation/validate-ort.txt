@@ -1,4 +1,4 @@
-Validating ort.json
+Validating ort.spdx.json
 +----+--------------+--------------+--------------------------+---------------------------+
 | #  | Error type   | SPDX ID      | Package name             | Reason                    |
 +----+--------------+--------------+--------------------------+---------------------------+
@@ -451,4 +451,4 @@ Validating ort.json
 |    | ationInfo::C |              |                          |                           |
 |    | reator       |              |                          |                           |
 +----+--------------+--------------+--------------------------+---------------------------+
-The SPDX file final.projects/python/ort.json is not compliant with the OpenChain Telco SBOM Guide version 1.1
+The SPDX file final.projects/python/ort.spdx.json is not compliant with the OpenChain Telco SBOM Guide version 1.1

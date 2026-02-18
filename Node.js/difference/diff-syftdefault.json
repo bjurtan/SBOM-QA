@@ -4,7 +4,7 @@
     "version": "0.5.6"
   },
   "file_1": "SBOM-QA/Node.js/expressjs_express_98d8b1.json",
-  "file_2": "clone/Node.js/mehdi-new/syft-default.json",
+  "file_2": "clone/Node.js/mehdi-new/syft-default.spdx.json",
   "differences": [
     {
       "package": "mocha",
